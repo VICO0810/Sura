@@ -1,7 +1,7 @@
 {
   "name": "sura_practica",
   "version": "1.0.0",
-  "description": "Proyecto de practica Analisisde y desarrollo de Software implementando los indicadores de la compañia(area comercial)",
+  "description": "Proyecto de practica Analisis de y desarrollo de Software implementando los indicadores de la compañia(area comercial)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,10 +11,14 @@
   "author": "Vico B",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^3.1.10",
     "express": "^4.19.2",
     "jquery": "^3.7.1",
     "mysql2": "3.11.0",
     "sequelize": "^6.37.3",
     "sequelize-cli": "^6.6.2"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.13"
   }
 }

@@ -18,23 +18,20 @@ if (config.use_env_variable) {
 // Importar los modelos
 const userModel = require('./user')(sequelize, Sequelize.DataTypes);
 const ramoModel = require('./ramo')(sequelize, Sequelize.DataTypes);
-const estrategiaModel = require('./estrategia')(sequelize, Sequelize.DataTypes);
-const user_EstrategiaModel = require('./user_estrategia')(sequelize, Sequelize.DataTypes);
 
 // Añadir los modelos al objeto db
-db[userModel.name] = userModel;
-db[ramoModel.name] = ramoModel;
-db[estrategiaModel.name] = estrategiaModel;
-db[user_EstrategiaModel.name] = user_EstrategiaModel;
+db.User = userModel;
+db.Ramo = ramoModel;
 
-// Configurar las asociaciones
-Object.keys(db).forEach((modelName) => {
+// Añadir la instancia de Sequelize y Sequelize al objeto db
+db.sequelize = sequelize;
+db.Sequelize = Sequelize;
+
+// Asociar los modelos
+Object.keys(db).forEach(modelName => {
   if (db[modelName].associate) {
     db[modelName].associate(db);
   }
 });
-
-db.sequelize = sequelize;
-db.Sequelize = Sequelize;
 
 module.exports = db;

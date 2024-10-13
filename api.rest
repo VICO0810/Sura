@@ -1,0 +1,7 @@
+//Ruta para el login (Recibe un email y una contraseña y devuelve un token)
+POST http://localhost:3000/login
+Content-Type: application/json
+{
+    "email": "fsalazare@sura.com.co",
+    "password": 1234
+}
