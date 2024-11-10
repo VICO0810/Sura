@@ -1,14 +1,51 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-</head>
-<body>
-    <div>
-        <button>Informes</button>
-        <button>Detalles</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <title>Welcome</title>
+  </head>
+
+  <body class="bg-gray-200">
+    <%- include('components/header', { title: 'Promotora Milan' }) %>
+    <!-- Contendor Pricipal -->
+    <div class="flex p-2 items-center justify-center gap-10">
+      <!-- Contenedor de panel de administrador -->
+      <aside
+        class="flex flex-col w-2/10 py-2 items-start justify-center gap-10 font-bold text-2xl text-gray-950"
+      >
+        <div
+          class="flex p-2 hover:bg-sky-500 border-2 border-solid border-gray-500"
+        >
+          <a href="/usuarios">Administrar usuarios</a>
+        </div>
+        <div class="flex p-2 hover:bg-sky-500">
+          <a href="/clientes">Administrar Clientes</a>
+        </div>
+        <div
+          class="bg-blue-500 py-2 px-4 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+        >
+          <a href="/intermediarios">Administrar Intermediarios</a>
+        </div>
+      </aside>
+      <!-- Contenedor de botones de opciones -->
+      <div class="flex justify-center p-2 w-10/12 gap-10">
+        <a href="/informes">
+          <button
+            class="bg-sky-500 text-white font-bold py-2 px-4 rounded-lg p-2"
+          >
+            Informes
+          </button>
+        </a>
+        <a href="/detalles">
+          <button
+            class="bg-sky-500 text-white font-bold py-2 px-4 rounded-lg p-2"
+          >
+            Detalles
+          </button>
+        </a>
+      </div>
     </div>
-</body>
+  </body>
 </html>

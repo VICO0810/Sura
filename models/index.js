@@ -17,11 +17,11 @@ if (config.use_env_variable) {
 
 // Importar los modelos
 const userModel = require('./user')(sequelize, Sequelize.DataTypes);
-const ramoModel = require('./ramo')(sequelize, Sequelize.DataTypes);
+const clienteModel = require('./cliente')(sequelize, Sequelize.DataTypes);
 
 // Añadir los modelos al objeto db
 db.User = userModel;
-db.Ramo = ramoModel;
+db.Cliente = clienteModel;
 
 // Añadir la instancia de Sequelize y Sequelize al objeto db
 db.sequelize = sequelize;

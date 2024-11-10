@@ -1,4 +1,4 @@
-const db = require('../models'); // Asegúrate de que la ruta es correcta
+const db = require('../models/index');
 
 exports.login = async (req, res) => {
   try {

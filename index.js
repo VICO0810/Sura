@@ -8,6 +8,9 @@ const dashboardController = require("./controllers/dashboardController");
 // Importar rutas
 const loginRouter = require("./Routes/loginRouter");
 const dashboardRouter = require("./Routes/dashboardRouter");
+const informesRouter = require("./Routes/informesRouter");
+const usuariosRouter = require("./Routes/usuariosRouter");
+// const clientesRouter = require ("./Routes/clientesRouter.js")
 
 // Configurar el motor de vistas
 app.set("view engine", "ejs");
@@ -22,7 +25,7 @@ app.use(express.urlencoded({ extended: true }));
 
 //Ruta principal
 app.get("/", (req, res) => {
-  res.render("welcome");
+  res.render("welcome", {error: false});
 });
 // Ruta para el login
 app.use("/login", loginRouter);
@@ -30,12 +33,13 @@ app.use("/login", loginRouter);
 //Ruta para dashboard
 app.use('/dashboard', dashboardRouter);
 
-//Prueba de conexión a la base de datos
-// app.get('/prueba', (req, res) => {
-//   db.User.findAll().then(users => {
-//     res.json(users);
-//   });
-// });
+//Ruta para informes
+app.use('/informes',informesRouter);
+
+//Ruta para usuarios
+app.use('/usuarios',usuariosRouter);
+
+// app.use('/clientes',clientesRouter);
 
 // Probar la conexión a la base de datos
 db.sequelize

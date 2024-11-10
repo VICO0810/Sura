@@ -1,5 +1,3 @@
-module.exports = {
-  index() {
-    render("dashboard");
-  },
+exports.index = async (req, res) => {
+  res.render("/dashboard");
 };

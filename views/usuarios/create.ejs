@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href=".././output.css" rel="stylesheet" />
+    <title>Crear Usuarios</title>
+</head>
+
+<body>
+    <%- include('../components/header', { title: 'Crear usuario' }) %>
+        <!-- Botón de regreso -->
+        <a href="/usuarios">
+            <button class="bg-sky-500 text-white font-bold py-2 px-4 rounded-lg p-2 m-2">
+                Atrás
+            </button>
+        </a>
+        <!-- Contendor Pricipal -->
+        <div class="flex items-center justify-center gap-10 py-5">
+            <!-- Formulario de Registro de usuario -->
+            <form action="./create" method="POST" class="w-10/12 shadow-black py-5 flex flex-col items-center">
+                <% if (error) { %>
+                    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                        <strong class="font-bold">¡Error!</strong>
+                        <span class="block sm:inline">
+                            <%= error %>
+                        </span>
+                    </div>
+                    <% } %>
+                        <h2 class="text-4xl m-4">Formulario de Registro</h2>
+                        <div class="grid grid-cols-1 gap-4 w-full max-w-md">
+                            <div class="flex flex-col">
+                                <label for="nombre" class="mb-1">Nombre Completo:</label>
+                                <input type="text" id="nombre" name="fullname" required
+                                    class="border border-sky-500 p-2 rounded-lg" />
+                            </div>
+
+                            <div class="flex flex-col">
+                                <label for="correo" class="mb-1">Correo:</label>
+                                <input type="email" id="correo" name="email" required
+                                    class="rounded-lg border border-sky-500 p-2" />
+                            </div>
+
+                            <div class="flex flex-col ">
+                                <label for="documento" class="mb-1">Documento:</label>
+                                <input type="text" id="documento" name="document" required
+                                    class="rounded-lg border border-sky-500 p-2" />
+                            </div>
+
+                            <div class="flex flex-col">
+                                <label for="celular" class="mb-1">Celular:</label>
+                                <input type="tel" id="celular" name="phone" required
+                                    class=" rounded-lg border border-sky-500 p-2" />
+                            </div>
+
+                            <div class="flex flex-col ">
+                                <label for="cargo" class="mb-1">Cargo:</label>
+                                <input type="text" id="cargo" name="rol" required
+                                    class="rounded-lg border border-sky-500 p-2" />
+                            </div>
+
+                            <div class="flex flex-col ">
+                                <label for="contrasena" class="mb-1">Contraseña:</label>
+                                <input type="password" id="password" name="password" required
+                                    class="rounded-lg border border-sky-500 p-2" />
+                            </div>
+
+                            <div class="flex flex-col ">
+                                <label for="descripcion" class="mb-1">Descripción:</label>
+                                <input type="text" id="descripcion" name="description" required
+                                    class="rounded-lg border border-sky-500 p-2" />
+                            </div>
+                        </div>
+                        <div class="flex flex-col mt-4 ">
+                            <button type="submit" class=" bg-sky-500 text-white py-2 px-4 rounded">Enviar</button>
+                        </div>
+        </div>
+        </form>
+        </div>
+</body>
+
+</html>
