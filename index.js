@@ -1,4 +1,5 @@
 const express = require("express");
+const session = require('express-session');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const db = require("./models");
@@ -22,6 +23,12 @@ app.use(express.static(__dirname + "/src"));
 // Configurar el servidor para recibir JSON y datos de formularios
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(session({
+  secret: 'secret',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false }
+}));
 
 //Ruta principal
 app.get("/", (req, res) => {
@@ -29,6 +36,7 @@ app.get("/", (req, res) => {
 });
 // Ruta para el login
 app.use("/login", loginRouter);
+app.use("/logout", loginController.logout);
 
 //Ruta para dashboard
 app.use('/dashboard', dashboardRouter);

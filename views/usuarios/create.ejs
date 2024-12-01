@@ -54,12 +54,17 @@
                                     class=" rounded-lg border border-sky-500 p-2" />
                             </div>
 
-                            <div class="flex flex-col ">
+                            <div class="flex flex-col">
                                 <label for="cargo" class="mb-1">Cargo:</label>
-                                <input type="text" id="cargo" name="rol" required
-                                    class="rounded-lg border border-sky-500 p-2" />
+                                <select id="cargo" name="rol" required class="rounded-lg border border-sky-500 p-2">
+                                    <option value="Analista Comercial">Analista Comercial</option>
+                                    <option value="Auxiliar de Expedición">Auxiliar de Expedición</option>
+                                    <option value="Cartera">Cartera</option>
+                                    <option value="Director Comercial">Director Comercial</option>
+                                    <option value="Gerente">Gerente</option>
+                                </select>
                             </div>
-
+                            
                             <div class="flex flex-col ">
                                 <label for="contrasena" class="mb-1">Contraseña:</label>
                                 <input type="password" id="password" name="password" required
@@ -73,7 +78,7 @@
                             </div>
                         </div>
                         <div class="flex flex-col mt-4 ">
-                            <button type="submit" class=" bg-sky-500 text-white py-2 px-4 rounded">Enviar</button>
+                            <button type="submit" class=" bg-sky-500 text-white py-2 px-4 rounded">Registrar</button>
                         </div>
         </div>
         </form>
